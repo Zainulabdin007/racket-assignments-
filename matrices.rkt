@@ -1,23 +1,10 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname matrices) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor mixed-fraction #f #t none #f () #t)))
-;;
-;; ***************************************************
-;; Zain Bughio (21199539)
-;; CS 135 Fall 2025
-;; Assignment 09, Problem 3`
-;; ***************************************************
-;;
 
 
 
-;;
-;;question 3, part a
-;;
-;;
+
+
 ;;extract-column is a function that takes a list and a index and returns the element at that index
 ;; from each list in the matrix
-;;
 
 (define (extract-column lst in)
  (map (lambda (row) (index in row)) lst))
@@ -31,9 +18,7 @@
 
 
 
-;;
-;;question 3, part b
-;;
+
 ;;matrix-multiply creates a list where each element is a list of the dot products
 ;; between A's row and B's column. and this is done for each of A's rows with each of B's columns. 
 ;; Required : amount of columns in A equal the amount of rows in B
