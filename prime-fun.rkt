@@ -1,20 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname prime-fun) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor mixed-fraction #f #t none #f () #t)))
-;;
-;; ***************************************************
-;; Zain Bughio (21199539)
-;; CS 135 Fall 2025
-;; Assignment 09, Problem 4`
-;; ***************************************************
-;;
 
-
-;;
-;;question 4, part a
-;;
-;;
-;;
 ;; prime? is a function that takes a number returns true is something is a prime number and
 ;; false otherwise
 ;;
@@ -23,17 +7,13 @@
   (empty? (filter (lambda (divisor) (= (remainder n divisor) 0)) (build-list (max 0 (- n 2))
                                                                              (lambda (x) (+ x 2)))))))
 
-;;
-;;question 4, part b
-;;
+
 ;;list-primes is a function that lists all the primes from 2 to a given n
 
 (define (list-primes n)
   (filter prime? (build-list (max 0 (- n 1)) (lambda (x) (+ x 2)))))
 
-;;
-;;question 4, part c
-;;
+
 ;; gb is a function that produces a list of pairs(x,y) that when summed, will equal the given natural
 ;; nubmer n where n>=4 and x<=y and x and y are both prime numbers
 (define (gb n)
@@ -41,8 +21,6 @@
           (foldl append empty (map (lambda (x) (map (lambda (y) (list x y))
           (filter (lambda (y) (>= y x)) (list-primes n)))) (list-primes n)))))
 
-;; question 4, part d
-;; not even going to bother
 
 (check-expect (gb 4) (list (list 2 2)))
 (check-expect (gb 10) (list (list 5 5) (list 3 7)))
