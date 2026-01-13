@@ -1,19 +1,7 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-lambda-reader.ss" "lang")((modname super) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor mixed-fraction #f #t none #f () #t)))
-;;
-;; ***************************************************
-;; Zain Bughio (21199539)
-;; CS 135 Fall 2025
-;; Assignment 09, Problem 2
-;; ***************************************************
-;;
 
 
-;;
-;;question 2, part a
-;;
-;;
+
+
 ;; the function super-filter is a function that works like a filter but works on nested lists as well
 ;;
 (define (super-filter pred? lst)
@@ -24,26 +12,18 @@
          (cons (first lst) (super-filter pred? (rest lst)))]
         [else (super-filter pred? (rest lst))]))
 
-;;
-;;question 2, part b
-;;
-;;
+
 ;; the function  ruthless takes out all the 'ruth symbols out of the given list
 ;; Required : the given list must be list of only symbols
 (define (ruthless lst)
   (super-filter (lambda (x) (not (symbol=? x 'ruth ))) lst))
 
-;;
-;;question 2, part c
-;;
+
 ;; takes a list and removes all the natural numbers less then the given n
 ;; Required : the given list must only contain Nat numbers
 (define (supersize n lst)
   (super-filter (lambda (x) (<= n x)) lst))
 
-;;
-;;question 2, part d
-;;
 ;; the function will just keep the elements that are against the predicate
 ;;
 (define (super-keeper pred? lst)
